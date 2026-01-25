@@ -79,7 +79,7 @@ nav a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: #000;
+  background: #7C3AED;
   transition: width 0.3s ease;
 }
 
@@ -101,7 +101,7 @@ nav a:hover svg {
   display: none;
   background: none;
   border: none;
-  color: #60a5fa;
+  color: black;
   font-size: 1.8rem;
   cursor: pointer;
 }
@@ -117,7 +117,7 @@ nav a:hover svg {
     top: 100%;
     left: 0;
     right: 0;
-    background: #EDEDED;
+    background: #7C3AED;
     padding: 1rem 0;
     display: none;
   }
@@ -148,18 +148,71 @@ nav a:hover svg {
 /*fim do header*/
 
 .apresentacao {
-  padding-top: 14rem;
-  height: 120vh;
-  margin-left: 315px;
-  color: #EDEDED;
-  font-size: 2rem;
+  padding-top: 16rem;          /* aumentei um pouco pra dar espaço com textos maiores */
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5rem;                   /* mais espaço entre texto e imagem */
+  max-width: 1600px;           /* permite mais largura em TV/monitor grande */
+  margin: 0 auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-size: 2.4rem;           /* base maior para todo o texto da seção */
+}
+
+.apresentacao h1 {
+  font-size: 3.8rem;           /* "Olá, meu nome é" bem grande */
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .h2pri {
-  font-size: 2.2rem;
-margin-top: 0.6rem;
-
+  font-size: 4.8rem;           /* Nome principal – bem destacado */
+  margin: 0.5rem 0;
+  font-weight: 800;
+  color: #c084fc;              /* opcional: roxo claro pra destacar */
 }
 
-.h2o {font-size: 1.8rem;
+.h2o {
+  font-size: 2.8rem;           /* "Estudante de Tecnologia" um pouco menor que o nome */
+  margin-top: 0.8rem;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.linuxg img {
+  width: 380px;                /* aumentado de ~280px para 380px – ajuste se quiser maior/menor */
+  max-width: 100%;             /* não estoura em telas menores */
+  height: auto;
+  display: block;
+}
+
+/* Mobile / telas menores */
+@media (max-width: 900px) {
+  .apresentacao {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+    padding-top: 12rem;
+    font-size: 1.8rem;         /* base menor no mobile pra não ficar gigante */
+  }
+
+  .apresentacao h1 {
+    font-size: 3rem;
+  }
+
+  .h2pri {
+    font-size: 3.8rem;
+  }
+
+  .h2o {
+    font-size: 2.2rem;
+  }
+
+  .linuxg img {
+    width: 280px;              /* imagem menor no celular pra caber bem */
+  }
 }
