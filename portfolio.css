@@ -1,5 +1,8 @@
-
 /*header*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+
 
 * {
   margin: 0;
@@ -8,9 +11,9 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #0f172a;       /* fundo escuro */
-  color: #e2e8f0;            /* texto claro */
+  font-family: 'Poppins', sans-serif;
+  background: #151520; /* fundo escuro */
+  color: #e2e8f0; /* texto claro */
   line-height: 1.5;
 }
 
@@ -21,7 +24,7 @@ header {
   left: 0;
   right: 0;
   height: 70px;
-  background: rgba(15, 23, 42, 0.92);
+  background: #7C3AED;
   border-bottom: 1px solid #334155;
   z-index: 100;
 }
@@ -39,7 +42,7 @@ header {
 
 /* Logo */
 .logo {
-  color: #60a5fa;
+   color: #F5F3FF;
   font-size: 2.2rem;
   font-weight: bold;
   text-decoration: none;
@@ -53,18 +56,19 @@ nav ul {
 }
 
 nav a {
-  color: #94a3b8;
+  color: white;
   text-decoration: none;
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: .5rem;
-  position: relative;           /* necessário pro underline */
+  gap: 0.5rem;
+  position: relative; /* necessário pro underline */
   transition: color 0.25s ease;
+font-size: 1.2rem
 }
 
 nav a:hover {
-  color: #60a5fa;
+  color: black
 }
 
 /* Barrinha underline animada */
@@ -75,7 +79,7 @@ nav a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: #60a5fa;
+  background: #000;
   transition: width 0.3s ease;
 }
 
@@ -113,9 +117,9 @@ nav a:hover svg {
     top: 100%;
     left: 0;
     right: 0;
-    background: #1e293b;
+    background: #EDEDED;
     padding: 1rem 0;
-    display: none;              
+    display: none;
   }
 
   nav.active {
@@ -134,4 +138,28 @@ nav a:hover svg {
   }
 }
 
+
+
+
+
+
+
+
 /*fim do header*/
+
+.apresentacao {
+  padding-top: 14rem;
+  height: 120vh;
+  margin-left: 315px;
+  color: #EDEDED;
+  font-size: 2rem;
+}
+
+.h2pri {
+  font-size: 2.2rem;
+margin-top: 0.6rem;
+
+}
+
+.h2o {font-size: 1.8rem;
+}
