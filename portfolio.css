@@ -1,257 +1,52 @@
-/*header*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #151520; /* fundo escuro */
-  color: #e2e8f0; /* texto claro */
-  line-height: 1.5;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
-/* Header fixo */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  background: #7C3AED;
-  border-bottom: 1px solid #334155;
-  z-index: 100;
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
 }
 
-/* Container centralizado */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Vinil girando */
+#jazz-player.playing #vinyl {
+  animation: spin 5s linear infinite;
 }
 
-/* Logo */
-.logo {
-   color: #F5F3FF;
-  font-size: 2.2rem;
-  font-weight: bold;
-  text-decoration: none;
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
-/* Menu desktop */
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.8rem;
+/* Chuva */
+#rain {
+  mix-blend-mode: screen;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  position: relative; /* necessário pro underline */
-  transition: color 0.25s ease;
-font-size: 1.2rem
+/* Hover glow suave */
+a:hover, button:hover {
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
+  transition: all 0.3s ease;
 }
 
-nav a:hover {
-  color: black
+/* Cards com luz de abajur */
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.9), 0 0 30px rgba(212,175,55,0.18);
 }
 
-/* Barrinha underline animada */
-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #000000;
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Ícones SVG */
-nav svg {
-  transition: transform 0.2s ease;
-}
-
-nav a:hover svg {
-  transform: scale(1.1);
-}
-
-/* Botão hambúrguer (só aparece no mobile) */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: black;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* Mobile: menu vira dropdown */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #7C3AED;
+/* Navbar responsiva */
+@media (max-width: 640px) {
+  nav .flex {
+    gap: 1.25rem;
+    font-size: 0.95rem;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 1rem 0;
-    display: none;
   }
-
-  nav.active {
-    display: block;
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
   }
-
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  nav a {
-    font-size: 2.1rem;
-    padding: 0.5rem 1rem;
-  }
-}
-
-
-
-
-
-
-
-
-/*fim do header*/
-
-/* Apresentação */
-.apresentacao {
-  padding-top: 16rem;
-  min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 3rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  font-size: 2.4rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.texto-apresentacao {
-  flex: 1 1 380px;
-  min-width: 380px;
-  max-width: 600px;
-}
-
-.apresentacao h1 {
-  font-size: 3.8rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.h2pri {
-  font-size: 4.8rem;
-  margin: 0.5rem 0;
-  font-weight: 800;
-  color: #c084fc;
-  line-height: 1.1;
-}
-
-.h2o {
-  font-size: 2.8rem;
-  margin-top: 0.8rem;
-  font-weight: 500;
-  opacity: 0.95;
-}
-
-.linuxg img {
-  width: 380px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Mobile / telas menores */
-@media (max-width: 1100px) {
-  .apresentacao {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 3rem;
-    padding-top: 12rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    max-width: 100vw;
-    overflow-x: hidden;
-    word-break: break-word;
-    hyphens: auto;
-  }
-
-  .texto-apresentacao {
-    min-width: 100%;
-    max-width: 100%;
-  }
-
-  .apresentacao h1,
-  .h2pri,
-  .h2o {
-    max-width: 95vw;
-    word-wrap: break-word;
-    line-height: 1.15;
-  }
-
-  .h2pri {
-    font-size: 3.6rem;           /* menor no celular pra não vazar */
-  }
-
-  .h2o {
-    font-size: 2.2rem;
-  }
-
-  .apresentacao h1 {
-    font-size: 2.8rem;
-  }
-
-  .linuxg img {
-    width: 85vw;
-    max-width: 340px;
-    margin: 1rem auto;
-  }
-}
-
-/* Segurança global */
-html, body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
 }
