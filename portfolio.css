@@ -10,14 +10,48 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
-/* Vinil girando */
+/* Ajustes de tamanho responsivo */
+#jazz-player {
+  transition: all 0.4s ease;
+}
+
+#jazz-player:hover {
+  transform: translateY(-3px) scale(1.04);
+}
+
 #jazz-player.playing #vinyl {
-  animation: spin 5s linear infinite;
+  animation: spin 10s linear infinite;
+}
+
+#jazz-player.playing #needle {
+  transform: rotate(-10deg) !important;
+  animation: needle-vibrate 0.18s infinite alternate;
+}
+
+#jazz-player.playing #play-icon {
+  display: none;
+}
+
+#jazz-player.playing #pause-icon {
+  display: inline;
 }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+@keyframes needle-vibrate {
+  from { transform: rotate(-10deg) translateX(0); }
+  to   { transform: rotate(-10deg) translateX(1px); }
+}
+
+/* Responsividade fina */
+@media (max-width: 640px) {
+  #jazz-player {
+    bottom: 5rem;  /* mais espaço do botão inferior */
+    right: 1.5rem;
+  }
 }
 
 /* Chuva */

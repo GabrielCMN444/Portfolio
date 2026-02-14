@@ -42,11 +42,12 @@ if (canvas) {
   });
 }
 
-// Player Jazz
 const player = document.getElementById('jazz-player');
 const audio = document.getElementById('audio');
+
 if (player && audio) {
   let isPlaying = false;
+
   player.addEventListener('click', () => {
     if (isPlaying) {
       audio.pause();
@@ -57,7 +58,10 @@ if (player && audio) {
     }
     isPlaying = !isPlaying;
   });
+
+  audio.volume = 0.70;  // suave
 }
+
 
 // Smooth scroll
 document.querySelectorAll('.smooth-scroll').forEach(anchor => {
